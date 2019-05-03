@@ -1,0 +1,26 @@
+# azure-files/tasks/main.yml
+---
+
+- name: Install Common Internet File System packages
+  apt:
+    name:
+      - dcifs-utils
+    state: 'latest'
+
+
+- name: Create Azure files destination directory
+  file:
+    path: "{{ mount_dir }}"
+    state: directory
+    mode: "u=rw,g=rw,o=rw"
+    recurse: yes
+
+- name: Copy mount script
+  copy:
+    src: 'mount_files.sh'
+    dest: '/tmp'
+    mode: 0774
+
+
+- name: Execute mount script
+  command:  'MOUNT_DIR={{ mount_dir }} && USER={{ username }} && PASSWORD={{ password }} && ACCOUNT={{ account }} && source /tmp/mount_files.sh'

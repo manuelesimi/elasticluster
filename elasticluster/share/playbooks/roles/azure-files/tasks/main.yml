@@ -4,7 +4,7 @@
 - name: Install Common Internet File System packages
   apt:
     name:
-      - dcifs-utils
+      - cifs-utils
     state: 'latest'
 
 

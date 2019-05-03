@@ -1,7 +1,6 @@
 ---
 - name: Azure Files Playbook
-  hosts: 127.0.0.1
-  connection: local
+  hosts: azure_files
   tags:
     - azure_files
   roles:

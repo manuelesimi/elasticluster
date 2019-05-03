@@ -5,7 +5,7 @@
   apt:
     name:
       - cifs-utils
-    state: 'latest'
+    state: '{{ pkg_install_state }}'
 
 
 - name: Create Azure files destination directory

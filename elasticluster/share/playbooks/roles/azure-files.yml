@@ -1,8 +1,8 @@
 ---
 - name: Azure Files Playbook
-  hosts: azure_files
+  hosts: azure-files
   tags:
-    - azure_files
+    - azure-files
   roles:
     - role: 'azure-files'
 
